@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <title>Использование форм. Тест математических знаний</title>
+</head>
+<header>
+    <img src = "Mospolytech_logo.jpg">
+</header>
+<main>
+    <form name="Test" method="POST" class="main-form">
+        <div class="form-row">
+            <label for="name">ФИО</label> <input type="text" name="fullname" required value="<?php if (isset($_GET['fullname'])) echo $_GET['fullname'];?>">
+        </div>
+        <div class="form-row">
+            <label for="number">Номер группы</label> <input type="text" value="<?php if (isset($_GET['number'])) echo $_GET['number'];?>"name="number" required>
+        </div>
+        <div class="form-row">
+            <label for="about">Немного о себе</label>
+            <textarea name="about"></textarea>
+        </div>
+        <div class="form-row">
+            <label for="A">Значение А:</label>
+            <input type="text" name="A" required value="<?php echo mt_rand(1,100)?>">
+        </div>
+        <div class="form-row">
+            <label for="B">Значение В:</label> 
+            <input type="text" name="B" required value="<?php echo mt_rand(1,100)?>">
+        </div>
+        <div class="form-row">
+            <label for="C">Значение С:</label> 
+            <input type="text" name="C" required value="<?php echo mt_rand(1,100)?>">
+        </div>
+        <div class="form-row">
+            <label for="method">Метод вычисления</label>
+            <select name="method">
+                <option>Найти минимум</option>
+                <option>Площадь треугольника</option>
+                <option>Периметр треугольника</option>
+                <option>Среднее арифметическое</option>
+                <option>Найти максимум</option>
+                <option>Произведение чисел</option>
+            </select>
+        </div>
+        <div class="form-row">
+            <label for="answer">Ваш ответ:</label> <input type="text" name="answer">
+        </div>
+        <div class="form-row">
+            <label for="email">Отправить результат на email?</label>
+            <input type="checkbox" name="chekemail" id="send">
+        </div>
+        <div class="form-row form-email">
+            <label for="email">Ваш email:</label> <input type="text" name="email"> 
+        </div>
+        <div class="form-row">
+            <label>Отображение</label>
+            <select name="view">
+                <option value="print">Версия для печати</option>
+                <option value="browser" selected>Версия для просмотра в браузере</option>
+            </select> 
+        </div>
+        <div class="form-row">
+            <button type="submit" class="form-btn">Проверить</button>
+        </div>
+    </form>
+</main>
+<footer>
+ <a href="https://drive.google.com/drive/folders/1gBi_TtUPGPIPvIDqv--tZ2Zq3TUt_uzT?usp=sharing">Ссылка на гугл диск с файлами PHP и CSS</a>
+</footer>
+<script src="script.js"></script>
